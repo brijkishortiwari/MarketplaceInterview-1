@@ -18,6 +18,7 @@ namespace Marketplace.Interview.Business.Basket
         public int SupplierId { get; set;}
         public ShippingBase Shipping { get; set; }
         public string DeliveryRegion { get; set; }
+        //public string DeliveryCountry { get; set; }
         public int Id { get; set; }
 
         public decimal ShippingAmount { get; set; }

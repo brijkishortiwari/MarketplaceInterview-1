@@ -15,10 +15,30 @@ namespace Marketplace.Interview.Business.Shipping
 
         public override decimal GetAmount(LineItem lineItem, Basket.Basket basket)
         {
+            
+            //List<RegionShippingCost> listPerRegionCosts = PerRegionCosts.ToList();
+            //bool containsCountryRegion = listPerRegionCosts.Exists(x=>x.DestinationRegion==lineItem.DeliveryRegion);
+            ////bool checkListContains=(from c in PerRegionCosts where c.DestinationRegion.Contains(lineItem.DeliveryRegion));
+            //if (containsCountryRegion)
+            //    return
+            //    (from c in PerRegionCosts
+            //     where c.DestinationRegion == lineItem.DeliveryRegion
+            //     select c.Amount).Single();
+
+            //else
+            //{
+            //    lineItem.DeliveryRegion = RegionShippingCost.Regions.RestOfTheWorld;
+            //    return
+            //    (from c in PerRegionCosts
+            //     where c.DestinationRegion == lineItem.DeliveryRegion
+            //     select c.Amount).Single();
+            //}
+
             return
-                (from c in PerRegionCosts
-                 where c.DestinationRegion == lineItem.DeliveryRegion
-                 select c.Amount).Single();
+            (from c in PerRegionCosts
+             where c.DestinationRegion == lineItem.DeliveryRegion
+             select c.Amount).Single();
+            
         }
     }
 }

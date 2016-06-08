@@ -24,6 +24,17 @@ namespace Marketplace.Interview.Tests
                     }
                 },
                 {
+                    "PerCountry", new PerCountryShipping
+                    {
+                        PerRegionCosts = new List<RegionShippingCost>
+                        {
+                            new RegionShippingCost{DestinationRegion = RegionShippingCost.Regions.UK, Amount = .5m},
+                            new RegionShippingCost{DestinationRegion = RegionShippingCost.Regions.Europe, Amount = 10m},
+                            new RegionShippingCost{DestinationRegion = RegionShippingCost.Regions.RestOfTheWorld, Amount = 2m},
+                        }
+                    }
+                },
+                {
                     "PerRegion", new PerRegionShipping
                     {
                         PerRegionCosts = new List<RegionShippingCost>
@@ -57,5 +68,7 @@ namespace Marketplace.Interview.Tests
 
             Assert.That(constants.Count(), Is.EqualTo(3));
         }
+
+
     }
 }
